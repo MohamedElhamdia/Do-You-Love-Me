@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hacked!</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            background-color: black;
+            color: red;
+            font-family: 'Courier New', Courier, monospace;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            animation: bgFlash 1s infinite;
+        }
+
+        @keyframes bgFlash {
+            0% { background-color: black; }
+            50% { background-color: darkred; }
+            100% { background-color: black; }
+        }
+
+        h1 {
+            font-size: 3em;
+            text-shadow: 0 0 20px red;
+            animation: glitch 0.5s infinite;
+        }
+
+        @keyframes glitch {
+            0% { transform: translate(0); }
+            20% { transform: translate(-2px, 2px); }
+            40% { transform: translate(2px, -2px); }
+            60% { transform: translate(-2px, -2px); }
+            80% { transform: translate(2px, 2px); }
+            100% { transform: translate(0); }
+        }
+
+        p {
+            font-size: 1.5em;
+            color: white;
+            animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+            0% { opacity: 1; }
+            50% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        audio {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <audio autoplay loop>
+        <source src="you'r died.mp3" type="audio/mpeg">
+    </audio>
+
+    <script>
+        document.addEventListener('click', () => {
+            const audio = document.querySelector('audio');
+            audio.play();
+        });
+    </script>
+
+    <div>
+        <h1>⚠️ SYSTEM BREACH DETECTED ⚠️</h1>
+        <p>Your system has been compromised. Data extraction in progress...</p>
+    </div>
+</body>
+</html>

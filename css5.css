@@ -1,0 +1,119 @@
+/* Apply a smooth rainbow background animation with pink and purple colors */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background: linear-gradient(45deg, pink, purple);
+    background-size: 400% 400%;
+    animation: rainbow-background 5s ease infinite; /* Smooth animation for the rainbow background */
+  }
+  
+  /* Center the content */
+  .content {
+    text-align: center;
+    padding: 20px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .hello{
+    mix-blend-mode: multiply; /* Blends the image with the background */
+      width: 70px;
+      height: 70px;
+      margin: 0 0 0 150px ;
+      padding: 0;
+  }
+  /* Styling the box containing the text and buttons */
+  .box {
+    background-color: pink;
+    border-radius: 10px;
+    padding:10px 40px 90px 40px ;
+    box-shadow: 0 0 50px black;
+    width: 80%;
+    max-width: 350px;
+    text-align: center;
+    margin: auto;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  }
+  .buttons{
+    display: flex;
+  }
+  /* Styling for buttons */
+  button {
+    color: white;
+    padding: 10px 20px;
+    margin: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    max-width: 200px;
+    font-size: 30px;
+    color: white;
+    transition: 1.5s;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  }
+
+
+  
+  button.yes {
+    background-color: #ff4d94;
+  }
+  button.yes:hover{
+    background-color: purple;
+    scale: 1.2;
+  }
+  
+  button.no {
+    
+    background-color: #ff99cc;
+  }
+  button.no:hover{
+    background-color: purple;
+    scale: 1.2;
+  }
+  
+  /* Media Query for smaller screens */
+  @media (max-width: 600px) {
+    .box {
+      padding: 20px;
+      width: 90%;
+    }
+  
+    button {
+      padding: 15px;
+      font-size: 18px;
+    }
+  
+    h1 {
+      font-size: 24px;
+    }
+  }
+  
+  /* Smooth animation for the background */
+  @keyframes rainbow-background {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+ /* THIS FOR THE IMAGES */
+  .kittywithcoolglass{
+    transform: translateY(150px);
+  }
+  
+
+.angrycat2{
+    transform: translate(0,40px);
+    width: 100px;
+    height: 100px;
+}
