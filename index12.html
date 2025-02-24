@@ -3,76 +3,110 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hacked!</title>
+    <title>Love Button</title>
     <style>
         body {
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            text-align: center;
+            margin-top: 100px;
+            background-color: #ffe6f2;
+            color: #d63384;
+            overflow: hidden;
+        }
+        button {
+            margin: 36px 0 0 0;
+            width: 150px;
+            height: 150px;
+            font-size: 18px;
+            background-color: #ff69b4;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            transition: 1.5s;
+        }
+        button:hover {
+            filter: drop-shadow(0px 0px 15px #d63384);
+            scale: 1.2;
+            background-color: #d63384;
+        }
+        #message {
+            margin-top: 20px;
+            font-size: 22px;
+            font-weight: bold;
+        }
+        .heart {
+            position: fixed;
+            color: #ff1493;
+            font-size: 24px;
+            animation: fall 3s linear infinite;
+        }
+        @keyframes fall {
+            0% { transform: translateY(0); opacity: 1; }
+            100% { transform: translateY(100vh); opacity: 0; }
+        }
+
+        .catpoint{
+            width: 180px;
+            height: 180px;
+            transform: translate(15px,59px);
+
+        }
+        .twoguykiss{
+            width: 180px;
+            height: 180px;
+            transform: translate(-550px,59px);
+
+        }
+        .bringeyes{
+            width: 550px;
+            height: 550px;
+            transform: translate(590px,-230px);
+        }
+        .catholdflower{
+            width: 90px;
+            height: 90px;
             margin: 0;
             padding: 0;
-            height: 100vh;
-            background-color: black;
-            color: red;
-            font-family: 'Courier New', Courier, monospace;
-            overflow: hidden;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            animation: bgFlash 1s infinite;
-        }
 
-        @keyframes bgFlash {
-            0% { background-color: black; }
-            50% { background-color: darkred; }
-            100% { background-color: black; }
-        }
-
-        h1 {
-            font-size: 3em;
-            text-shadow: 0 0 20px red;
-            animation: glitch 0.5s infinite;
-        }
-
-        @keyframes glitch {
-            0% { transform: translate(0); }
-            20% { transform: translate(-2px, 2px); }
-            40% { transform: translate(2px, -2px); }
-            60% { transform: translate(-2px, -2px); }
-            80% { transform: translate(2px, 2px); }
-            100% { transform: translate(0); }
-        }
-
-        p {
-            font-size: 1.5em;
-            color: white;
-            animation: blink 1s infinite;
-        }
-
-        @keyframes blink {
-            0% { opacity: 1; }
-            50% { opacity: 0; }
-            100% { opacity: 1; }
-        }
-
-        audio {
-            display: none;
         }
     </style>
 </head>
 <body>
-    <audio autoplay loop>
-        <source src="you'r died.mp3" type="audio/mpeg">
-    </audio>
+    
+    <h1>💍 Finlly You Click Yes , I Love You Too Baby Muah 💍</h1>
+    <h1>😘 Click the Button for a Special Message 😘</h1>
+    <button onclick="showMessage()">Click Me!</button>
+    <img src="cat point oo.jpg" class="catpoint" style="mix-blend-mode: multiply;">
+    
+    <img src="twoguykiss.jpg" class="twoguykiss" style="mix-blend-mode: multiply;">
+    
 
+    
+    <div id="message"></div>
+
+    
     <script>
-        document.addEventListener('click', () => {
-            const audio = document.querySelector('audio');
-            audio.play();
-        });
-    </script>
+        function showMessage() {
+            document.getElementById("message").innerText = "We are officially married! Mua7, I love you! ❤️";
+            createHearts();
+        }
 
-    <div>
-        <h1>⚠️ SYSTEM BREACH DETECTED ⚠️</h1>
-        <p>Your system has been compromised. Data extraction in progress...</p>
-    </div>
+        function createHearts() {
+            for (let i = 0; i < 30; i++) {
+                let heart = document.createElement("div");
+                heart.classList.add("heart");
+                heart.innerHTML = "❤️";
+                heart.style.left = Math.random() * 100 + "vw";
+                heart.style.animationDuration = (Math.random() * 2 + 2) + "s";
+                document.body.appendChild(heart);
+
+                heart.addEventListener("animationend", () => {
+                    heart.remove();
+                });
+            }
+        }
+    </script>
 </body>
 </html>
